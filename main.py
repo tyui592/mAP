@@ -22,7 +22,7 @@ parser.add_argument('--set-class-iou', nargs='+', type=str, help="set IoU for a 
 parser.add_argument('--gt', type=str, help="ground truth path", default='./input/ground-truth/')
 parser.add_argument('--dr', type=str, help="detection results path", default='./input/detection-results/', required=True)
 parser.add_argument('--img', type=str, help="images path", default='./input/images-optional/')
-args = parser.parse_args() 
+args = parser.parse_args()
 
 
 '''
@@ -52,7 +52,7 @@ GT_PATH = args.gt
 DR_PATH = args.dr
 # if there are no images then no animation can be shown
 IMG_PATH = args.img
-if os.path.exists(IMG_PATH): 
+if os.path.exists(IMG_PATH):
     for dirpath, dirnames, files in os.walk(IMG_PATH):
         if not files:
             # no image files found
@@ -248,7 +248,7 @@ def draw_plot_func(dictionary, n_classes, window_title, plot_title, x_label, out
     sorted_dic_by_value = sorted(dictionary.items(), key=operator.itemgetter(1))
     # unpacking the list of tuples into two lists
     sorted_keys, sorted_values = zip(*sorted_dic_by_value)
-    # 
+    #
     if true_p_bar != "":
         """
          Special case to draw in:
@@ -311,7 +311,7 @@ def draw_plot_func(dictionary, n_classes, window_title, plot_title, x_label, out
     dpi = fig.dpi
     height_pt = n_classes * (tick_font_size * 1.4) # 1.4 (some spacing)
     height_in = height_pt / dpi
-    # compute the required figure height 
+    # compute the required figure height
     top_margin = 0.15 # in percentage of the figure height
     bottom_margin = 0.05 # in percentage of the figure height
     figure_height = height_in / (1 - top_margin - bottom_margin)
